@@ -1,0 +1,33 @@
+.root {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  box-sizing: border-box;
+
+  &_img {
+    width: 100%;
+  }
+
+  &__details {
+    margin-top: 40px;
+    text-align: left;
+
+    &_title {
+    }
+
+    &_likeBtn {
+      background-color: #3498db;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    &_city {
+    }
+
+    &_price {
+    }
+  }
+}
