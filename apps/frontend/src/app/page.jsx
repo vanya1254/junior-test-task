@@ -1,29 +1,41 @@
 'use client';
 
-// import axios from 'axios';
-import React, { useEffect } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 
 import { AdsList, Route } from './components';
 
 import styles from './index.module.scss';
 
-// const fetchAds = async () => {
-//   const { data } = await axios.get(
-//     'http://localhost:8000/api/ads?minPrice=1000000'
-//   );
+const fetchAds = async () => {
+  // try {
+  const { data } = await axios.get('http://localhost:8000/api/ads');
 
-//   return data;
-// };
+  return data;
+  // } catch (err) {
+  //   console.error(err);
+  //   data = { message: err.message };
+  // } finally {
+  //   return data;
+  // }
+};
 
 const Index = () => {
-  // useEffect(() => {
-  //   fetchAds();
-  // }, []);
+  const [adsList, setAdsList] = useState({});
+
+  useEffect(() => {
+    const setAds = async () => {
+      const { results } = await fetchAds();
+      setAdsList(await results);
+    };
+
+    setAds();
+  }, []);
 
   return (
     <div className={styles.container}>
       <Route path="/">
-        <AdsList />
+        <AdsList adsList={adsList} />
       </Route>
       <Route path="/ads">
         <AdsList />
