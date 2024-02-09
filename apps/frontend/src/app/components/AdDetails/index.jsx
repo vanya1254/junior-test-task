@@ -1,5 +1,5 @@
 import React from 'react';
 
-export const AdDetails = () => {
-  return <div>index</div>;
+export const AdDetails = ({ ad }) => {
+  return <div>{ad.id}</div>;
 };

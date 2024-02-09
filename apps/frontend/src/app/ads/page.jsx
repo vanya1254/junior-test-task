@@ -5,9 +5,9 @@ import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { AdsList } from './components';
+import { AdsList } from '../components';
 
-import styles from './index.module.scss';
+import styles from './ads.module.scss';
 
 const fetchAds = async () => {
   try {
@@ -31,7 +31,6 @@ const fetchAds = async () => {
 
 const Index = () => {
   const [adsList, setAdsList] = useState([]);
-  const [curAdId, setCurAdId] = useState(0);
 
   useEffect(() => {
     const setAds = async () => {
@@ -45,7 +44,6 @@ const Index = () => {
   return (
     <div className={styles.container}>
       <AdsList adsList={adsList} />
-
       <ToastContainer />
     </div>
   );
