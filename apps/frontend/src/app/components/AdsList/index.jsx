@@ -9,7 +9,7 @@ export const AdsList = ({ adsList }) => {
     <div className={styles.root}>
       <h1 className={styles.root_title}>List of Ads</h1>
       <div className={styles.root__adsContainer}>
-        {adsList.length > 0
+        {adsList
           ? adsList.map((ad) => {
               return <AdCard key={ad.id} {...ad} />;
             })
