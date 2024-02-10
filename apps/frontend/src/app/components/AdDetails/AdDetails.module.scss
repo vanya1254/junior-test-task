@@ -1,0 +1,89 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  &__carousel {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &_prev {
+      left: 0;
+      top: 0;
+    }
+    &_next {
+      right: 0;
+      top: 0;
+    }
+
+    &_prev,
+    &_next {
+      position: absolute;
+      width: 25%;
+      height: 100%;
+
+      font-size: 60px;
+      color: white;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s ease-in-out;
+    }
+    &_prev:hover,
+    &_next:hover {
+      transform: scale(1.25);
+      color: #3498db;
+    }
+    &_prev:active,
+    &_next:active {
+      opacity: 0.8;
+    }
+  }
+
+  &__adInfo {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f9f9f9;
+
+    &_title {
+      font-size: 24px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &_likeBtn {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    &_location {
+      font-size: 16px;
+    }
+
+    &_price {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    &_description {
+      margin-top: 40px;
+    }
+  }
+}

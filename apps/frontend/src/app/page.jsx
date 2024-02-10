@@ -9,7 +9,7 @@ import { AdsList } from './components';
 
 import styles from './index.module.scss';
 
-const fetchAds = async () => {
+export const fetchAds = async () => {
   try {
     const { data } = await axios.get('http://localhost:8000/api/ads');
     const { results } = data;
@@ -31,21 +31,24 @@ const fetchAds = async () => {
 
 const Index = () => {
   const [adsList, setAdsList] = useState([]);
-  const [curAdId, setCurAdId] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const setAds = async () => {
+    const getAds = async () => {
+      setIsLoading(true);
+
       const dataList = await fetchAds();
+
+      setIsLoading(false);
       setAdsList(dataList);
     };
 
-    setAds();
+    getAds();
   }, []);
 
   return (
     <div className={styles.container}>
-      <AdsList adsList={adsList} />
-
+      <AdsList adsList={adsList} isLoading={isLoading} />
       <ToastContainer />
     </div>
   );

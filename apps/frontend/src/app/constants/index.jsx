@@ -1,0 +1,78 @@
+export const emptyListForSkeleton = [
+  {
+    id: 0,
+    images: [
+      {
+        id: 0,
+        image: '',
+        thumbnail: '',
+        user: 0,
+      },
+    ],
+    city_name: '',
+    district_name: '',
+    title: '',
+    description: '<p></p>',
+    price: 0,
+    created_at: '',
+    views: 0,
+    user: 0,
+  },
+  {
+    id: 1,
+    images: [
+      {
+        id: 0,
+        image: '',
+        thumbnail: '',
+        user: 0,
+      },
+    ],
+    city_name: '',
+    district_name: '',
+    title: '',
+    description: '<p></p>',
+    price: 0,
+    created_at: '',
+    views: 0,
+    user: 0,
+  },
+  {
+    id: 2,
+    images: [
+      {
+        id: 0,
+        image: '',
+        thumbnail: '',
+        user: 0,
+      },
+    ],
+    city_name: '',
+    district_name: '',
+    title: '',
+    description: '<p></p>',
+    price: 0,
+    created_at: '',
+    views: 0,
+    user: 0,
+  },
+  {
+    id: 3,
+    images: [
+      {
+        id: 0,
+        image: '',
+        thumbnail: '',
+        user: 0,
+      },
+    ],
+    city_name: '',
+    district_name: '',
+    title: '',
+    description: '<p></p>',
+    price: 0,
+    created_at: '',
+    views: 0,
+    user: 0,
+  },
+];
